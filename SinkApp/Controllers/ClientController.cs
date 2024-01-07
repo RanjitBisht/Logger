@@ -24,13 +24,12 @@ namespace SinkApp.Controllers
 
         [HttpGet]
         // GET: ClientController/Details
-        public List<DisplayMessage> Details()
+        public DisplayMessage Details()
         {
             ExceptionLogger exceptionLogger = null;
             LogData logData = new LogData();
-            List<DisplayMessage> lstMessages = new List<DisplayMessage>();
-            lstMessages.Add(new DisplayMessage());
-            
+            DisplayMessage displayMessage = new DisplayMessage();
+                        
             try
             {
                 logData.Id = 1;
@@ -56,9 +55,9 @@ namespace SinkApp.Controllers
                 if(exceptionLogger!=null)
                     exceptionLogger.WriteMessage(logData);
             }
-            lstMessages[0].Message = "Please check console to view logger message.";
+            displayMessage.Message = "Please check console to view logger message.";
 
-            return lstMessages;
+            return displayMessage;
         }
 
         private void RaiseException()

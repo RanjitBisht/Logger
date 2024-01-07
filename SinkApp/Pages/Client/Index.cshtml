@@ -1,13 +1,9 @@
 ﻿@page
 @using SinkApp.Model;
-@model List<DisplayMessage>
+@model DisplayMessage
 @{
 }
 <div class="text-center">
     <h1 class="display-4">Welome to Client</h1>
-    @foreach (var obj in Model)
-    {
-        <p>@obj.Message</p>
-    }
-    
+        <p>@Model.Message</p>
 </div>

@@ -22,12 +22,11 @@ namespace SinkApp.Controllers
 
         [HttpGet]
         // GET: FileController/Details
-        public List<DisplayMessage> Details()
+        public DisplayMessage Details()
         {
             ExceptionLogger exceptionLogger = null;
             LogData logData = new LogData();
-            List<DisplayMessage> lstMessages = new List<DisplayMessage>();
-            lstMessages.Add(new DisplayMessage());
+            DisplayMessage displayMessage = new DisplayMessage();
 
             try
             {
@@ -56,9 +55,9 @@ namespace SinkApp.Controllers
                 if (exceptionLogger != null)
                     exceptionLogger.WriteMessage(logData);
             }
-            lstMessages[0].Message = "Logger file has been created successfully. Please check at on your drive location: D:/ErrorFile_1.txt";
+            displayMessage.Message = "Logger file has been created successfully. Please check at on your drive location: D:/ErrorFile_1.txt";
 
-            return lstMessages;
+            return displayMessage;
         }
 
         private void RaiseException()
