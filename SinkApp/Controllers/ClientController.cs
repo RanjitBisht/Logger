@@ -2,6 +2,7 @@
 using DovOnLogger.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using SinkApp.Model;
 using System.Net;
 
 namespace SinkApp.Controllers
@@ -23,10 +24,12 @@ namespace SinkApp.Controllers
 
         [HttpGet]
         // GET: ClientController/Details
-        public ActionResult Details()
+        public List<DisplayMessage> Details()
         {
             ExceptionLogger exceptionLogger = null;
             LogData logData = new LogData();
+            List<DisplayMessage> lstMessages = new List<DisplayMessage>();
+            lstMessages.Add(new DisplayMessage());
             
             try
             {
@@ -34,7 +37,7 @@ namespace SinkApp.Controllers
                 logData.Type = "Concole";
                 logData.LogLevel = "Debug";
                 logData.Message = "This is debug message";
-
+                
                 exceptionLogger = new ExceptionLogger(new ConsoleLogger());
 
                 _logger.LogDebug(logData.Message.ToString());
@@ -53,8 +56,9 @@ namespace SinkApp.Controllers
                 if(exceptionLogger!=null)
                     exceptionLogger.WriteMessage(logData);
             }
-            
-            return null;
+            lstMessages[0].Message = "Please check console to view logger message.";
+
+            return lstMessages;
         }
 
         private void RaiseException()

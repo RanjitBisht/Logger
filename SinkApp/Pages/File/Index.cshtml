@@ -1,8 +1,12 @@
 ﻿@page
-@model SinkApp.Pages.File.IndexModel
+@using SinkApp.Model;
+@model List<DisplayMessage>
 @{
 }
 <div class="text-center">
     <h1 class="display-4">Welome to Client</h1>
-    <p>Welcome to File Page!!</p>
+    @foreach (var obj in Model)
+    {
+        <p>@obj.Message</p>
+    }
 </div>
