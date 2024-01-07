@@ -7,7 +7,6 @@ builder.Services.AddRazorPages();
 
 // Add custom logger provider to the dependency injection container
 builder.Services.AddSingleton<ILoggerProvider, CustomLoggerProvider>();
-
 builder.Services.AddControllers();
 
 var app = builder.Build();

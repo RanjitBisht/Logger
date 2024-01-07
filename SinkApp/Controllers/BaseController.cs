@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace SinkApp.Controllers.Api
+namespace SinkApp.Controllers
 {
     [Route("[controller]")]
     [ApiController]

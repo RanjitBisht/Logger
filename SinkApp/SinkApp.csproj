@@ -10,4 +10,8 @@
     <ProjectReference Include="..\DovOnLogger\DovOnLogger.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Log\" />
+  </ItemGroup>
+
 </Project>

@@ -6,38 +6,38 @@ using System.Net;
 
 namespace SinkApp.Controllers
 {
-    public class ClientController : BaseController
+    public class FileController : BaseController
     {
         private ILogger _logger;
 
-        public ClientController(ILoggerProvider loggerProvider)
+        public FileController(ILoggerProvider loggerProvider)
         {
-            _logger = loggerProvider.CreateLogger(nameof(ClientController));
+            _logger = loggerProvider.CreateLogger(nameof(FileController));
         }
-
-        // GET: ClientController
-        public ActionResult Index()
+        public IActionResult Index()
         {
             return null;
         }
 
         [HttpGet]
-        // GET: ClientController/Details
+        // GET: FileController/Details
         public ActionResult Details()
         {
             ExceptionLogger exceptionLogger = null;
             LogData logData = new LogData();
-            
+
             try
             {
-                logData.Id = 1;
-                logData.Type = "Concole";
-                logData.LogLevel = "Debug";
-                logData.Message = "This is debug message";
+                logData.Id = 2;
+                logData.Type = "File";
+                logData.LogLevel = "Warning";
+                logData.Name = "ErrorFile_1.txt";
+                logData.Location = @"D:/";
+                logData.Message = "This is a warning message!";
 
-                exceptionLogger = new ExceptionLogger(new ConsoleLogger());
+                exceptionLogger = new ExceptionLogger(new FileLogger());
 
-                _logger.LogDebug(logData.Message.ToString());
+                _logger.LogWarning(logData.Message.ToString());
                 exceptionLogger.WriteMessage(logData);
 
                 // Raise faile exception
@@ -50,10 +50,10 @@ namespace SinkApp.Controllers
 
                 _logger.LogError(ex.ToString(), "Something went wrong");
 
-                if(exceptionLogger!=null)
+                if (exceptionLogger != null)
                     exceptionLogger.WriteMessage(logData);
             }
-            
+
             return null;
         }
 
@@ -61,6 +61,5 @@ namespace SinkApp.Controllers
         {
             throw new DivideByZeroException();
         }
-
     }
 }
