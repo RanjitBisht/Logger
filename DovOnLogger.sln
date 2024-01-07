@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34221.43
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DovOnLogger", "DovOnLogger\DovOnLogger.csproj", "{F7F7E4FC-352C-49C4-BBDA-97644A7EA29C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SinkApp", "SinkApp\SinkApp.csproj", "{9D68E559-A0A9-4E79-8068-BD49EC21E520}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F7F7E4FC-352C-49C4-BBDA-97644A7EA29C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7F7E4FC-352C-49C4-BBDA-97644A7EA29C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7F7E4FC-352C-49C4-BBDA-97644A7EA29C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7F7E4FC-352C-49C4-BBDA-97644A7EA29C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D68E559-A0A9-4E79-8068-BD49EC21E520}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D68E559-A0A9-4E79-8068-BD49EC21E520}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D68E559-A0A9-4E79-8068-BD49EC21E520}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D68E559-A0A9-4E79-8068-BD49EC21E520}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ACB3D264-6CCF-4CDE-BA5A-733C6D06796A}
+	EndGlobalSection
+EndGlobal
